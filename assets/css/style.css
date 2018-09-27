@@ -1,3 +1,24 @@
+
+body {
+  background-image: url("/Users/jgescriba/Desktop/GitHub Repositories/GifTastic/assets/images/soccer-background.jpg");
+}
+
+p {
+  color: red;
+  background-color: black;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+
+}
+
+div {
+
+  overflow:auto;
+  
+}
+
+
 .gif-form {
   position: fixed;
 }

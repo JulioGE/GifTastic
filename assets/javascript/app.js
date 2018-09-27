@@ -18,9 +18,11 @@ $("button").on("click", function () {
 
       var results = response.data;
 
+      $("#gifs-appear-here").empty();
+
       for (var i = 0; i < results.length; i++) {
 
-      var playerDiv = $("<div style='float:left; margin: 10px;'>");
+      var playerDiv = $("<div style='float:left; margin: 10px; border-style: outset;border-color: white'>");
 
       // var playerDiv = $("<div class='col-sm-3'>");
 
@@ -33,11 +35,11 @@ $("button").on("click", function () {
 
       playerImage.addClass("Img");
 
-      playerImage.attr("src", results[i].images.fixed_height.url);
+      playerImage.attr("src", results[i].images.fixed_height_still.url);
 
-      playerImage.attr("data-still", results[i].images.fixed_height_still.url);
+      playerImage.attr("data-animate", results[i].images.fixed_height_still.url);
 
-      playerImage.attr("data-animate", results[i].images.fixed_height.url);
+      playerImage.attr("data-still", results[i].images.fixed_height.url);
 
       playerDiv.append(p);
       playerDiv.append(playerImage);
@@ -52,22 +54,39 @@ $("button").on("click", function () {
         var state = $(this).attr("data-state"); 
         console.log(this);
 
-        if (state == "still") {
+        if (state === "still") {
         
-        $(this).attr("src", $(this).data("animate"));
-        
+        $(this).attr("src", $(this).attr("data-animate"));
         $(this).attr("data-state", "animate");
 
         } else {
-                
-        $(this).attr("src", $(this).data("still"));
-        
-        $(this).attr("data-state", "still");
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
       }  
     })    
     });
   });
 });
+
+  function renderButtons() {
+
+  $("#soccerButtons").empty();
+  
+  for (var i = 0; i < results.length; i++) {
+    
+    var a = $("<button>");
+    a.addClass("person");
+    a.attr("data-name", results[i]);
+    a.text(results[i]);
+    $("#soccerButtons").append(a);
+
+  };
+};
+
+
+
+
+
 
 
 
