@@ -1,5 +1,5 @@
 
-var soccerPlayers =  ["Ronaldinho", "Alessandro Del Piero", "Diego Maradona", "Ronaldo", "Jesse Lingard"]
+var soccerPlayers =  ["Ronaldinho", "Alessandro Del Piero", "Diego Maradona", "Ronaldo", "Jesse Lingard","Paul Pogba"]
 
 
 $(document).ready(function() {
