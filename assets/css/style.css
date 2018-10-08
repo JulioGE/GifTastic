@@ -1,6 +1,7 @@
 
 body {
-  background-image: url("/Users/jgescriba/Desktop/GitHub Repositories/GifTastic/assets/images/soccer-background.jpg");
+  background-image: url("../images/soccer-background.jpg");
+  
 }
 
 p {
