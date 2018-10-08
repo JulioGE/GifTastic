@@ -8,7 +8,7 @@ $(document).ready(function() {
 $(document).on("click",".gif",function () {
 
   var person = $(this).attr("data-person");
-
+console.log(person)
   var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person +
     "&api_key=886qtj1IPrQN0SwkUM14h3JGGRlY9kYK&limit=10";
 
