@@ -1,10 +1,11 @@
 
+
+
 var soccerPlayers =  ["Ronaldinho", "Alessandro Del Piero", "Diego Maradona", "Ronaldo", "Jesse Lingard","Paul Pogba"]
 
-
 $(document).ready(function() {
-
-$("button").on("click", function () {
+  
+$(document).on("click",".gif",function () {
 
   var person = $(this).attr("data-person");
 
@@ -80,7 +81,7 @@ $("button").on("click", function () {
     var playerButton = $("<button>");
 
     playerButton.attr("data-person", soccerPlayers[i]);
-
+playerButton.addClass("gif")
     playerButton.text(soccerPlayers[i]);
   
     $("#soccerButtons").append(playerButton);
@@ -98,11 +99,11 @@ $("button").on("click", function () {
 
     var a = $("#gif-input").val().trim();
 
-    if (a === "") {
-    return;
-  }
+    if(a!= ""||undefined){
+      soccerPlayers.push(a);
+    }
 
-  soccerPlayers.push(a);
+  
 
 renderButtons();
 
