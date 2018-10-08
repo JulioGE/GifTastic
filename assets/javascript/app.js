@@ -1,4 +1,7 @@
 
+var soccerPlayers =  ["Ronaldinho", "Alessandro Del Piero", "Diego Maradona", "Ronaldo", "Jesse Lingard"]
+
+
 $(document).ready(function() {
 
 $("button").on("click", function () {
@@ -69,19 +72,42 @@ $("button").on("click", function () {
 });
 
   function renderButtons() {
-
+    
   $("#soccerButtons").empty();
   
-  for (var i = 0; i < results.length; i++) {
-    
-    var a = $("<button>");
-    a.addClass("person");
-    a.attr("data-name", results[i]);
-    a.text(results[i]);
-    $("#soccerButtons").append(a);
+  for (var i = 0; i < soccerPlayers.length; i++) {
 
+    var playerButton = $("<button>");
+
+    playerButton.attr("data-person", soccerPlayers[i]);
+
+    playerButton.text(soccerPlayers[i]);
+  
+    $("#soccerButtons").append(playerButton);
+    // console.log(results);
+    
+   
   };
-};
+  };
+
+  renderButtons();
+
+  $("#sbmtButton").on("click", function(event){ 
+    
+    event.preventDefault();
+
+    var a = $("#gif-input").val().trim();
+
+    if (a === "") {
+    return;
+  }
+
+  soccerPlayers.push(a);
+
+renderButtons();
+
+
+  })
 
 
 
